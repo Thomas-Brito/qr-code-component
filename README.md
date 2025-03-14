@@ -20,18 +20,28 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 Look at how I have completed this challenge, first in the desktop version:
 
-![expectation](design/desktop-design.jpg)
-![reality](design/desktop-screenshot.png)
+Expectation:
+
+![Desktop design goal](design/desktop-design.jpg)
+
+Reality:
+
+![My desktop design](design/desktop-screenshot.png)
 
 Then, in the mobile version:
 
-![expectation](design/mobile-design.jpg)
-![reality](design/mobile-screenshot.png)
+Expectation:
+
+![Mobile design goal](design/mobile-design.jpg)
+
+Reality:
+
+![My mobile design](design/mobile-screenshot.png)
 
 ### Links
 
-- Solution URL: [Solution](https://github.com/Thomas-Brito/challenge-1)
-- Live Site URL: [Live Site](https://thomas-brito.github.io/challenge-1/)
+- Solution URL: [https://github.com/Thomas-Brito/challenge-1](https://github.com/Thomas-Brito/challenge-1)
+- Live Site URL: [https://thomas-brito.github.io/challenge-1/](https://thomas-brito.github.io/challenge-1/)
 
 ## My process
 

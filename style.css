@@ -8,13 +8,14 @@ body {
 .principal, .autor {
     width: 300px;
 }
+
 .principal {
-    margin: inherit;
-    margin-top: 100px;
-    margin-bottom: 15px;
     background-color: hsl(0, 0%, 100%);
     border-radius: 15px;
     box-shadow: 0 10px 10px hsl(212, 40%, 80%);
+    margin: inherit;
+    margin-bottom: 15px;
+    margin-top: 100px;
 }
 
 .principal img, .texto {
@@ -27,6 +28,7 @@ body {
 
 .principal .texto h1 {
     color: hsl(218, 44%, 22%);
+    font-size: 1.5em;
 }
 
 .principal .texto p {

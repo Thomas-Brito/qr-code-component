@@ -1,43 +1,49 @@
 body {
     background-color: hsl(212, 45%, 89%);
     font-family: Outfit, sans-serif;
-    overflow: auto;
+    text-align: center;
+    margin: auto;
+}
+
+.principal, .autor {
+    width: 300px;
 }
 .principal {
-    width: 300px;
-    margin: auto;
+    margin: inherit;
     margin-top: 100px;
+    margin-bottom: 15px;
     background-color: hsl(0, 0%, 100%);
     border-radius: 15px;
     box-shadow: 0 10px 10px hsl(212, 40%, 80%);
 }
-.principal img {
+
+.principal img, .texto {
     padding: 10px;
-    border-radius: 25px;
 }
 
-.principal .texto {
-    text-align: center;
-    padding: 10px;
+.principal img {
+    border-radius: 25px;
 }
 
 .principal .texto h1 {
     color: hsl(218, 44%, 22%);
 }
+
 .principal .texto p {
     color: hsl(216, 15%, 48%);
     font-size: 15px;
 }
+
 .autor { 
-    font-size: 11px; 
-    text-align: center; 
-    width: 300px;
-    margin: 10px auto;
+    font-size: 11px;
+    margin: inherit;
 }
+
 .autor a { 
     color: hsl(228, 45%, 44%); 
     text-decoration: none;
 }
+
 .autor a:hover {
     color: hsl(218, 44%, 22%);
 }

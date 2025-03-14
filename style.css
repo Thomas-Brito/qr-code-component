@@ -6,7 +6,7 @@ body {
 }
 
 .principal, .autor {
-    width: 300px;
+    width: 330px;
 }
 
 .principal {
@@ -18,12 +18,13 @@ body {
     margin-top: 100px;
 }
 
-.principal img, .texto {
-    padding: 10px;
+.principal img {
+    padding: 15px;
+    border-radius: 25px;
 }
 
-.principal img {
-    border-radius: 25px;
+.principal .texto {
+    padding: 0 25px 15px;
 }
 
 .principal .texto h1 {
@@ -48,4 +49,13 @@ body {
 
 .autor a:hover {
     color: hsl(218, 44%, 22%);
+}
+
+@media screen and (max-width: 375px) {
+    .principal, .autor, img {
+        width: 90%;
+    }
+    img {
+        padding: 2%;
+    }
 }

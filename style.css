@@ -1,42 +1,68 @@
+:root {
+    --azul-escuro: hsl(218, 44%, 22%);
+    --cinza-escuro: hsl(216, 15%, 48%);
+    --cinza-claro: hsl(212, 45%, 89%);
+    --branco: hsl(0, 0%, 100%);
+    --preto: hsl(0, 0%, 0%, 0.2);
+}
+
+html {
+    font-size: 16px;
+}
+
 body {
-    background-color: hsl(212, 45%, 89%);
+    background-color: var(--cinza-claro);
     font-family: Outfit, sans-serif;
     text-align: center;
     margin: auto;
 }
 
+@media screen and (max-width: 375px) {
+    .principal, .autor, img {
+        width: 90% !important;
+    }
+}
+
 .principal, .autor {
-    width: 330px;
+    width: 20rem;
 }
 
 .principal {
-    background-color: hsl(0, 0%, 100%);
-    border-radius: 15px;
-    box-shadow: 0 10px 10px hsl(212, 40%, 80%);
-    margin: inherit;
-    margin-bottom: 15px;
-    margin-top: 100px;
+    background-color: var(--branco);
+    border-radius: 1.25rem;
+    box-shadow: 0 0.25rem 0.75rem 0 var(--preto);
+    margin: auto;
+    margin-bottom: 2.5rem;
+    margin-top: 14.40625rem;
 }
 
 .principal img {
-    padding: 15px;
-    border-radius: 25px;
+    border-radius: 1.625rem;
+    padding: 1rem;
+    width: 18rem;
 }
 
 .principal .texto {
-    padding: 0 25px 15px;
+    padding: 0 1rem 2.5rem;
 }
 
 .principal .texto h1 {
-    color: hsl(218, 44%, 22%);
-    font-size: 1.5em;
+    color: var(--azul-escuro);
+    font-size: 1.375rem;
+    line-height: 120%;
+    padding: 0 1rem 1rem;
+    margin: 0;
 }
 
 .principal .texto p {
-    color: hsl(216, 15%, 48%);
-    font-size: 15px;
+    color: var(--cinza-escuro);
+    font-size: 0.937rem;
+    letter-spacing: 0.0125rem;
+    line-height: 140%;
+    padding: 0 1rem;
+    margin: 0;
 }
-
+/*
 .autor { 
     font-size: 11px;
     margin: inherit;
@@ -50,12 +76,4 @@ body {
 .autor a:hover {
     color: hsl(218, 44%, 22%);
 }
-
-@media screen and (max-width: 375px) {
-    .principal, .autor, img {
-        width: 90%;
-    }
-    img {
-        padding: 2%;
-    }
-}
+*/

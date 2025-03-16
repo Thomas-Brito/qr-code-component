@@ -30,7 +30,7 @@ body {
 .principal {
     background-color: var(--branco);
     border-radius: 1.25rem;
-    box-shadow: 0 0.25rem 0.75rem 0 var(--preto);
+    box-shadow: 0 0.25rem 0.5rem 0 var(--preto);
     margin: auto;
     margin-bottom: 2.5rem;
     margin-top: 14.40625rem;
@@ -43,7 +43,7 @@ body {
 }
 
 .principal .texto {
-    padding: 0 1rem 2.5rem;
+    padding: 0.5rem 1rem 2.5rem;
 }
 
 .principal .texto h1 {

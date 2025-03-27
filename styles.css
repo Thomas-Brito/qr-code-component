@@ -23,7 +23,7 @@ html[data-theme="light"] {
   --corFundo: var(--cinzaClaro);
   --corCard: var(--branco);
   --corTitulo: var(--azulEscuro);
-  --comParagrafo: var(--cinzaEscuro);
+  --corParagrafo: var(--cinzaEscuro);
 }
 
 html[data-theme="dark"] {

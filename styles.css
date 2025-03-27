@@ -1,9 +1,36 @@
 :root {
+  /* Esquema de cores */
+  /* color-scheme: light dark; */
+
+  /* Cores do modo claro */
   --azulEscuro: hsl(218, 44%, 22%);
   --cinzaEscuro: hsl(216, 15%, 48%);
   --cinzaClaro: hsl(212, 45%, 89%);
   --branco: hsl(0, 0%, 100%);
+
+  /* Cores do modo escuro */
+  --azulEscuroInvertido: hsl(218, 44%, 92%);
+  --cinzaEscuroInvertido: hsl(216, 15%, 78%);
+  --cinzaClaroInvertido: hsl(212, 45%, 12%);
+  --brancoInvertido: hsl(0, 0%, 10%);
+
+  /* Sombra */
   --sombra: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+html[data-theme="light"] {
+  --corFundo: var(--cinzaClaro);
+  --corCard: var(--branco);
+  --corTitulo: var(--azulEscuro);
+  --comParagrafo: var(--cinzaEscuro);
+}
+
+html[data-theme="dark"] {
+  --corFundo: var(--cinzaClaroInvertido);
+  --corCard: var(--brancoInvertido);
+  --corTitulo: var(--azulEscuroInvertido);
+  --corParagrafo: var(--cinzaEscuroInvertido);
 }
 
 * {
@@ -17,7 +44,7 @@ html, body {
 
 body {
   align-items: center;
-  background-color: var(--cinzaClaro);
+  background-color: var(--corFundo);
   display: flex;
   flex-direction: column;
   font-family: "Outfit", sans-serif;
@@ -26,8 +53,25 @@ body {
   text-align: center;
 }
 
+.aparencia {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  color: var(--corParagrafo);
+  padding: 1rem;
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+}
+
+.aparencia:hover {
+  background-color: var(--corCard);
+  cursor: pointer;
+  color: var(--corParagrafo);
+}
+
 .principal {
-  background-color: var(--branco);
+  background-color: var(--corCard);
   border-radius: 1.25rem;
   box-shadow: var(--sombra);
   width: 20rem;
@@ -44,7 +88,7 @@ body {
 }
 
 .principal .texto h1 {
-  color: var(--azulEscuro);
+  color: var(--corTitulo);
   font-size: 1.375rem;
   line-height: 120%;
   padding: 0 1rem 1rem;
@@ -52,7 +96,7 @@ body {
 }
 
 .principal .texto p {
-  color: var(--cinzaEscuro);
+  color: var(--corParagrafo);
   font-size: 0.937rem;
   letter-spacing: 0.0125rem;
   line-height: 140%;

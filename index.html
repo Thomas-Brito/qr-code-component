@@ -1,27 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="light-dark">
 <head>
-
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- mostra o site de acordo com a largura da tela do dispositivo do usuário -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="color-scheme" content="light dark"/>
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"/>
   <link rel="stylesheet" href="styles.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet"/>
-
   <title>Frontend Mentor | QR code component</title>
-
 </head>
-<body class="tudo">
-  <button id="alternar" class="aparencia" title="Color scheme"><i class="fa-solid fa-circle-half-stroke"></i></button>
 
-  <main class="principal">
-    <img src="images/image-qr-code.png" alt="Código QR e link para o site 'Frontendmentor.io'"/>
+<body class="tudo cor-fundo-1">
+  <div id="minha-caixa" class="caixa">
+    <div class="conteudo-caixa cor-fonte-1 cor-fundo-1">
+      <p>Which theme do you prefer?</p>
+      <span class="fechar-caixa cor-fonte-1">&times;</span>
+      <form>
+        <input type="radio" id="default" name="tema" value="light-dark" checked/>
+        <label for="default">System default theme</label><br/>
+        <input type="radio" id="light" name="tema" value="light"/>
+        <label for="light">Light theme</label><br/>
+        <input type="radio" id="dark" name="tema" value="dark"/>
+        <label for="dark">Dark theme</label><br/>
+      </form>
+    </div>
+  </div>
+  <button id="abrir-caixa" class="aparencia cor-fonte-2 cor-fundo-2" title="Theme">&#127763;</button>
+
+  <main class="principal cor-fundo-2">
+    <img src="images/image-qr-code.png" alt="QR Code for Frontendmentor.io"/>
     <div class="texto">
-      <h1>Improve your front-end skills by building projects</h1>
-      <p>Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
+      <h1 class="cor-fonte-1">Improve your front-end skills by building projects</h1>
+      <p class="cor-fonte-2">Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
     </div>
   </main>
 

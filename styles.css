@@ -1,50 +1,53 @@
-:root {
-  /* Esquema de cores */
-  /* color-scheme: light dark; */
-
-  /* Cores do modo claro */
-  --azulEscuro: hsl(218, 44%, 22%);
-  --cinzaEscuro: hsl(216, 15%, 48%);
-  --cinzaClaro: hsl(212, 45%, 89%);
-  --branco: hsl(0, 0%, 100%);
-
-  /* Cores do modo escuro */
-  --azulEscuroInvertido: hsl(218, 44%, 92%);
-  --cinzaEscuroInvertido: hsl(216, 15%, 78%);
-  --cinzaClaroInvertido: hsl(212, 45%, 12%);
-  --brancoInvertido: hsl(0, 0%, 10%);
-
-  /* Sombra */
-  --sombra: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-}
-
-html[data-theme="light"] {
-  --corFundo: var(--cinzaClaro);
-  --corCard: var(--branco);
-  --corTitulo: var(--azulEscuro);
-  --corParagrafo: var(--cinzaEscuro);
-}
-
-html[data-theme="dark"] {
-  --corFundo: var(--cinzaClaroInvertido);
-  --corCard: var(--brancoInvertido);
-  --corTitulo: var(--azulEscuroInvertido);
-  --corParagrafo: var(--cinzaEscuroInvertido);
-}
-
+/* Definição do tamanho da "caixa" de elementos como tamanho da borda */
 * {
   box-sizing: border-box;
 }
 
+/* Definição de parâmetros para a raiz do documento */
+:root {
+  color-scheme: light dark;
+  --sombra: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Cores para o modo claro */
+html[data-theme="light"] {
+  --cor-fonte-1: hsl(218, 44%, 22%);
+  --cor-fonte-2: hsl(216, 15%, 48%);
+  --cor-fundo-1: hsl(212, 45%, 89%);
+  --cor-fundo-2: hsl(0, 0%, 100%);
+}
+
+/* Cores para o modo escuro */
+html[data-theme="dark"] {
+  --cor-fonte-1: hsl(218, 44%, 92%);
+  --cor-fonte-2: hsl(216, 15%, 78%);
+  --cor-fundo-1: hsl(212, 45%, 12%);
+  --cor-fundo-2: hsl(0, 0%, 10%);
+}
+
+/* Cores para o modo padrão do sistema */
+html[data-theme="light-dark"] {
+  --cor-fonte-1: light-dark(hsl(218, 44%, 22%), hsl(218, 44%, 92%));
+  --cor-fonte-2: light-dark(hsl(216, 15%, 48%), hsl(216, 15%, 78%));
+  --cor-fundo-1: light-dark(hsl(212, 45%, 89%), hsl(212, 45%, 12%));
+  --cor-fundo-2: light-dark(hsl(0, 0%, 100%), hsl(0, 0%, 10%));
+}
+
+/* Configuração das cores de acordo com a classe */
+.cor-fonte-1 { color: var(--cor-fonte-1); }
+.cor-fonte-2 { color: var(--cor-fonte-2); }
+.cor-fundo-1 { background-color: var(--cor-fundo-1); }
+.cor-fundo-2 { background-color: var(--cor-fundo-2); }
+
+/* Configurações padrão para documento e corpo */
 html, body {
   height: 100%;
   width: 100%;
 }
 
+/* Configurações padrão para o corpo */
 body {
   align-items: center;
-  background-color: var(--corFundo);
   display: flex;
   flex-direction: column;
   font-family: "Outfit", sans-serif;
@@ -53,25 +56,78 @@ body {
   text-align: center;
 }
 
+/* Estilo para o botão de abrir a caixa interativa */
 .aparencia {
   background-color: transparent;
   border: none;
   border-radius: 50%;
-  color: var(--corParagrafo);
+  opacity: 0.7;
   padding: 1rem;
-  position: fixed;
+  position: absolute;
   right: 1rem;
   top: 1rem;
 }
 
 .aparencia:hover {
-  background-color: var(--corCard);
+  background-color: var(--cor-fundo-1);
   cursor: pointer;
-  color: var(--corParagrafo);
 }
 
+/* Estilo da caixa interativa */
+.caixa {
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Estilo do conteúdo da caixa interativa */
+.conteudo-caixa {
+  border: 1px solid #888;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 15% auto;
+  max-width: 20rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+/* Estilo do botão de fechar da caixa interativa */
+.fechar-caixa {
+  align-self: center;
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.fechar-caixa:hover,
+.fechar-caixa:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Estilos para os botões de mudança de cor da caixa interativa */
+form {
+  text-align: left;
+}
+
+input, label {
+  line-height: 200%;
+}
+
+input:hover, label:hover {
+  cursor: pointer;
+}
+
+/* Estilos do conteúdo principal */
 .principal {
-  background-color: var(--corCard);
   border-radius: 1.25rem;
   box-shadow: var(--sombra);
   width: 20rem;
@@ -88,7 +144,6 @@ body {
 }
 
 .principal .texto h1 {
-  color: var(--corTitulo);
   font-size: 1.375rem;
   line-height: 120%;
   padding: 0 1rem 1rem;
@@ -96,7 +151,6 @@ body {
 }
 
 .principal .texto p {
-  color: var(--corParagrafo);
   font-size: 0.937rem;
   letter-spacing: 0.0125rem;
   line-height: 140%;

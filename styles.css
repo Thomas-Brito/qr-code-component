@@ -1,63 +1,66 @@
-/* Definição do tamanho da "caixa" de elementos como tamanho da borda */
 * {
   box-sizing: border-box;
 }
 
-/* Definição de parâmetros para a raiz do documento */
 :root {
   color-scheme: light dark;
+
+  --espacamento: 0.0125rem;
+
+  --fonte-1: 700 clamp(1.25rem, calc(1.214rem + 0.179vw), 1.375rem)/120% "Outfit"; /* min: 20px, max: 22px */
+  --fonte-2: 400 clamp(0.875rem, calc(0.857rem + 0.089vw), 0.938rem)/140% "Outfit"; /* min: 15px, max: 14px */
+  --fonte-3: 400 clamp(0.875rem, calc(0.857rem + 0.089vw), 0.938rem)/200% "Outfit"; /* min: 15px, max: 14px */
+
   --sombra: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* Cores para o modo claro */
-html[data-theme="light"] {
+:root[data-theme="light"] {
   --cor-fonte-1: hsl(218, 44%, 22%);
   --cor-fonte-2: hsl(216, 15%, 48%);
   --cor-fundo-1: hsl(212, 45%, 89%);
   --cor-fundo-2: hsl(0, 0%, 100%);
 }
 
-/* Cores para o modo escuro */
-html[data-theme="dark"] {
+:root[data-theme="dark"] {
   --cor-fonte-1: hsl(218, 44%, 92%);
   --cor-fonte-2: hsl(216, 15%, 78%);
   --cor-fundo-1: hsl(212, 45%, 12%);
   --cor-fundo-2: hsl(0, 0%, 10%);
 }
 
-/* Cores para o modo padrão do sistema */
-html[data-theme="light-dark"] {
+:root[data-theme="light-dark"] {
   --cor-fonte-1: light-dark(hsl(218, 44%, 22%), hsl(218, 44%, 92%));
   --cor-fonte-2: light-dark(hsl(216, 15%, 48%), hsl(216, 15%, 78%));
   --cor-fundo-1: light-dark(hsl(212, 45%, 89%), hsl(212, 45%, 12%));
   --cor-fundo-2: light-dark(hsl(0, 0%, 100%), hsl(0, 0%, 10%));
 }
 
-/* Configuração das cores de acordo com a classe */
 .cor-fonte-1 { color: var(--cor-fonte-1); }
 .cor-fonte-2 { color: var(--cor-fonte-2); }
 .cor-fundo-1 { background-color: var(--cor-fundo-1); }
 .cor-fundo-2 { background-color: var(--cor-fundo-2); }
 
+.espacamento-1 { letter-spacing: var(--espacamento) }
+
+.fonte-1 { font: var(--fonte-1)}
+.fonte-2 { font: var(--fonte-2)}
+.fonte-3 { font: var(--fonte-3)}
+
+.sombra { box-shadow: var(--sombra); }
+
 /* Configurações padrão para documento e corpo */
 html, body {
-  height: 100%;
-  width: 100%;
-}
-
-/* Configurações padrão para o corpo */
-body {
   align-items: center;
   display: flex;
-  flex-direction: column;
-  font-family: "Outfit", sans-serif;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  margin: auto;
-  text-align: center;
+  margin: 0;
+  min-height: 100%;
 }
 
-/* Estilo para o botão de abrir a caixa interativa */
-.aparencia {
+/* Estilo para o botão de abrir a modal */
+.tema {
   background-color: transparent;
   border: none;
   border-radius: 50%;
@@ -68,13 +71,13 @@ body {
   top: 1rem;
 }
 
-.aparencia:hover {
+.tema:hover {
   background-color: var(--cor-fundo-1);
   cursor: pointer;
 }
 
-/* Estilo da caixa interativa */
-.caixa {
+/* Estilo da modal */
+.modal {
   background-color: black;
   background-color: rgba(0, 0, 0, 0.4);
   display: none;
@@ -87,9 +90,10 @@ body {
   z-index: 1;
 }
 
-/* Estilo do conteúdo da caixa interativa */
-.conteudo-caixa {
+/* Estilo do conteúdo da modal  */
+.conteudo-modal {
   border: 1px solid #888;
+  border-radius: 1.25rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -100,26 +104,22 @@ body {
   width: 100%;
 }
 
-/* Estilo do botão de fechar da caixa interativa */
-.fechar-caixa {
+/* Estilo do botão de fechar da modal  */
+.fechar-modal {
   align-self: center;
   font-size: 1.75rem;
   font-weight: bold;
 }
 
-.fechar-caixa:hover,
-.fechar-caixa:focus {
+.fechar-modal:hover,
+.fechar-modal:focus {
   text-decoration: none;
   cursor: pointer;
 }
 
-/* Estilos para os botões de mudança de cor da caixa interativa */
+/* Estilos para os botões de mudança de cor da modal interativa */
 form {
   text-align: left;
-}
-
-input, label {
-  line-height: 200%;
 }
 
 input:hover, label:hover {
@@ -129,7 +129,7 @@ input:hover, label:hover {
 /* Estilos do conteúdo principal */
 .principal {
   border-radius: 1.25rem;
-  box-shadow: var(--sombra);
+  text-align: center;
   width: 20rem;
 }
 
@@ -144,16 +144,11 @@ input:hover, label:hover {
 }
 
 .principal .texto h1 {
-  font-size: 1.375rem;
-  line-height: 120%;
   padding: 0 1rem 1rem;
   margin: 0;
 }
 
 .principal .texto p {
-  font-size: 0.937rem;
-  letter-spacing: 0.0125rem;
-  line-height: 140%;
   padding: 0 1rem;
   margin: 0;
 }

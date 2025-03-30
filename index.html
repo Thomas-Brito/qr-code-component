@@ -13,34 +13,34 @@
 </head>
 
 <body class="tudo cor-fundo-1">
-  <div id="minha-caixa" class="caixa">
-    <div class="conteudo-caixa cor-fonte-1 cor-fundo-1">
-      <p>Which theme do you prefer?</p>
-      <span class="fechar-caixa cor-fonte-1">&times;</span>
+
+  <aside id="minha-modal" class="modal">
+    <div class="conteudo-modal cor-fonte-1 cor-fundo-1 sombra">
+      <p class="fonte-1 cor-fonte-1">Choose the theme:</p>
+      <span class="fechar-modal cor-fonte-1">&times;</span>
       <form>
         <input type="radio" id="default" name="tema" value="light-dark" checked/>
-        <label for="default">System default theme</label><br/>
+        <label for="default" class="fonte-3 cor-fonte-1">System default</label><br/>
         <input type="radio" id="light" name="tema" value="light"/>
-        <label for="light">Light theme</label><br/>
+        <label for="light" class="fonte-3 cor-fonte-1">Light</label><br/>
         <input type="radio" id="dark" name="tema" value="dark"/>
-        <label for="dark">Dark theme</label><br/>
+        <label for="dark" class="fonte-3 cor-fonte-1">Dark</label><br/>
       </form>
     </div>
-  </div>
-  <button id="abrir-caixa" class="aparencia cor-fonte-2 cor-fundo-2" title="Theme">&#127763;</button>
+  </aside>
+  <button id="abrir-modal" class="tema cor-fonte-2 cor-fundo-2" title="Theme">&#127763;</button>
 
-  <main class="principal cor-fundo-2">
+  <main class="principal cor-fundo-2 sombra">
     <img src="images/image-qr-code.png" alt="QR Code for Frontendmentor.io"/>
     <div class="texto">
-      <h1 class="cor-fonte-1">Improve your front-end skills by building projects</h1>
-      <p class="cor-fonte-2">Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
+      <h1 class="cor-fonte-1 fonte-1">Improve your front-end skills by building projects</h1>
+      <p class="cor-fonte-2 fonte-2 espacamento-1">Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
     </div>
   </main>
 
   <!-- <footer class="autor">
     <p><i>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="https://github.com/Thomas-Brito" target="_blank">Thomas Brito</a>.</i></p>
   </footer> -->
-  <script src="https://kit.fontawesome.com/9823007c42.js" crossorigin="anonymous"></script>
   <script src="script.js"></script>
 </body>
 </html>

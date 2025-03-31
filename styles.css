@@ -7,9 +7,9 @@
 
   --espacamento: 0.0125rem;
 
-  --fonte-1: 700 clamp(1.25rem, calc(1.214rem + 0.179vw), 1.375rem)/120% "Outfit"; /* min: 20px, max: 22px */
-  --fonte-2: 400 clamp(0.875rem, calc(0.857rem + 0.089vw), 0.938rem)/140% "Outfit"; /* min: 15px, max: 14px */
-  --fonte-3: 400 clamp(0.875rem, calc(0.857rem + 0.089vw), 0.938rem)/200% "Outfit"; /* min: 15px, max: 14px */
+  --fonte-1: 700 clamp(1.25rem, calc(1.214rem + 0.179vw), 1.375rem)/120% "Outfit", sans-serif; /* min: 20px, max: 22px */
+  --fonte-2: 400 clamp(0.875rem, calc(0.857rem + 0.089vw), 0.938rem)/140% "Outfit", sans-serif; /* min: 15px, max: 14px */
+  --fonte-3: 400 clamp(0.875rem, calc(0.857rem + 0.089vw), 0.938rem)/200% "Outfit", sans-serif; /* min: 15px, max: 14px */
 
   --sombra: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -48,7 +48,6 @@
 
 .sombra { box-shadow: var(--sombra); }
 
-/* Configurações padrão para documento e corpo */
 html, body {
   align-items: center;
   display: flex;
@@ -59,8 +58,7 @@ html, body {
   min-height: 100%;
 }
 
-/* Estilo para o botão de abrir a modal */
-.tema {
+.abrir-modal {
   background-color: transparent;
   border: none;
   border-radius: 50%;
@@ -71,12 +69,11 @@ html, body {
   top: 1rem;
 }
 
-.tema:hover {
+.abrir-modal:hover {
   background-color: var(--cor-fundo-1);
   cursor: pointer;
 }
 
-/* Estilo da modal */
 .modal {
   background-color: black;
   background-color: rgba(0, 0, 0, 0.4);
@@ -90,7 +87,6 @@ html, body {
   z-index: 1;
 }
 
-/* Estilo do conteúdo da modal  */
 .conteudo-modal {
   border: 1px solid #888;
   border-radius: 1.25rem;
@@ -104,7 +100,11 @@ html, body {
   width: 100%;
 }
 
-/* Estilo do botão de fechar da modal  */
+aside p {
+  margin: 0;
+  padding: 0.5rem 0;
+}	
+
 .fechar-modal {
   align-self: center;
   font-size: 1.75rem;
@@ -117,7 +117,6 @@ html, body {
   cursor: pointer;
 }
 
-/* Estilos para os botões de mudança de cor da modal interativa */
 form {
   text-align: left;
 }
@@ -126,7 +125,6 @@ input:hover, label:hover {
   cursor: pointer;
 }
 
-/* Estilos do conteúdo principal */
 .principal {
   border-radius: 1.25rem;
   text-align: center;
